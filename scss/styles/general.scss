@@ -1,0 +1,7 @@
+.background {
+  background: $primary;
+  background: -webkit-linear-gradient(left top, $primary, $primary-gradient);
+  background: -o-linear-gradient(bottom right, $primary, $primary-gradient);
+  background: -moz-linear-gradient(bottom right, $primary, $primary-gradient);
+  background: linear-gradient(to bottom right, $primary, $primary-gradient);
+}

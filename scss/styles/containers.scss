@@ -1,0 +1,29 @@
+.container {
+  margin: 20px 5%;
+  width: 85%;
+  padding: 20px;
+  background: $background;
+}
+
+.column-container {
+  @extend .container;
+  column-count: 3;
+  column-gap: 30px;
+  text-align: center;
+  column-rule: 1px solid $border;
+}
+.display-container {
+  @extend .container;
+}
+.small-container {
+  @extend .background;
+  margin: 20px 5%;
+  width: 85%;
+  padding: 20px;
+  color: white;
+}
+
+.small-container:hover {
+  cursor: pointer;
+  background: $secondary;
+}
