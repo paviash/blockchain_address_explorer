@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --hot ",
     "test": "jest"
   },
-  "author": "",
+  "author": "Pavithra Rajendran",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
