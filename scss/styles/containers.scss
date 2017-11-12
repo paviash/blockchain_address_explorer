@@ -2,15 +2,18 @@
   margin: 20px 5%;
   width: 85%;
   padding: 20px;
-  background: $background;
+  background: white;
 }
 
 .column-container {
-  @extend .container;
-  column-count: 3;
-  column-gap: 30px;
+  column-count: 4;
+  column-gap: 20px;
   text-align: center;
   column-rule: 1px solid $border;
+  background: $background;
+  margin: 10px 0;
+  height: 70px;
+  padding: 20px 0;
 }
 .display-container {
   @extend .container;
@@ -23,7 +26,19 @@
   color: white;
 }
 
-.small-container:hover {
+.split-container {
+  column-count: 2;
+}
+.click-container {
+  width: 90%;
+  padding: 5px 30px;
+  margin: 5px 0;
+  color: white;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+.click-container:hover {
   cursor: pointer;
-  background: $secondary;
+  color: black;
 }

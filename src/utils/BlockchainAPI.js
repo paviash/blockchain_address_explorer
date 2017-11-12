@@ -3,20 +3,26 @@ const request = require("superagent");
 
 module.exports = {
   get(hash) {
+    let outcome;
     if (hash) {
       request
         .get(`https://api.smartbit.com.au/v1/blockchain/address/${hash}`)
+        // .get(
+        //   `http://52.212.29.223/proxy/https://blockchain.info/rawaddr/${hash}`
+        // )
         .set("Accept", "application/json")
         .end((err, response) => {
           if (response.status === 200) {
             AppActions.getBlockchainInfo([response.body, hash]);
           } else {
-            console.log(`Error${err}`);
+            AppActions.getBlockchainInfo(["Error", hash]);
           }
-          return true;
         });
+
+      outcome = true;
     } else {
-      console.log("No hash value");
+      outcome = false;
     }
+    return outcome;
   }
 };

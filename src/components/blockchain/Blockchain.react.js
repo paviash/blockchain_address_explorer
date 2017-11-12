@@ -1,11 +1,11 @@
-const React = require('react');
-const reactCreateClass = require('create-react-class');
-const BlockchainStore = require('../../stores/BlockchainStore');
-const TransactionDetails = require('./TransactionDetails.react');
+const React = require("react");
+const reactCreateClass = require("create-react-class");
+const BlockchainStore = require("../../stores/BlockchainStore");
+const TransactionDetails = require("./TransactionDetails.react");
 
 function getBlockchainInfo() {
   return {
-    transactions: BlockchainStore.getInfo(),
+    transactions: BlockchainStore.getInfo()
   };
 }
 const Blockchain = reactCreateClass({
@@ -21,7 +21,7 @@ const Blockchain = reactCreateClass({
   render() {
     const data = Object.values(this.state.transactions);
     let details;
-    if (data[0] === 'Error') {
+    if (data[0] === "Error") {
       details = <p className="error"> Address not exist </p>;
     } else if (data.length > 0) {
       let info;
@@ -32,32 +32,20 @@ const Blockchain = reactCreateClass({
       }
       details = (
         <div>
-          <p className="headings">Transactions</p>
+          <h4>{info.address}</h4>
           <div className="display-container">
             <table>
               <tbody>
                 <tr>
-                  <td>
-                    <p>ADDRESS : </p>
-                  </td>
-                  <td>{info.address}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>TOTAL RECEIVED :</p>
-                  </td>
+                  <td>TOTAL RECEIVED :</td>
                   <td>{info.confirmed.received}</td>
                 </tr>
                 <tr>
-                  <td>
-                    <p>TOTAL SPENT : </p>
-                  </td>
+                  <td>TOTAL SPENT :</td>
                   <td>{info.confirmed.spent}</td>
                 </tr>
                 <tr>
-                  <td>
-                    <p>TOTAL BALANCE : </p>
-                  </td>
+                  <td>TOTAL BALANCE :</td>
                   <td>{info.confirmed.balance}</td>
                 </tr>
               </tbody>
@@ -73,7 +61,7 @@ const Blockchain = reactCreateClass({
   },
   onChange() {
     this.setState({ transactions: getBlockchainInfo() });
-  },
+  }
 });
 
 module.exports = Blockchain;

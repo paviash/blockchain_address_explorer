@@ -19,3 +19,16 @@
 .inline-text {
   display: inline-block;
 }
+
+.error-message {
+  height: 12px;
+  font-size: 10px;
+  color: red;
+  text-align: left;
+  margin-left: 40px;
+  padding: 0;
+}
+
+.error-style {
+  border: 2px solid red;
+}
